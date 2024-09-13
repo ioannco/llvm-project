@@ -5029,7 +5029,7 @@ Node *AbstractManglingParser<Derived, Alloc>::parseExpr() {
       // C Cast: (type)expr
       Node *Ty;
       {
-        ScopedOverride<bool> SaveTemp(TryToParseTemplateArgs, false);
+        ScopedOverride<bool> SaveTemp(TryToParseTemplateArgs, true);
         Ty = getDerived().parseType();
       }
       if (Ty == nullptr)
